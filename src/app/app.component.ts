@@ -8,6 +8,10 @@ import {
   restaurantOutline,
   readerOutline,
   heartOutline,
+  home,
+  fileTrayStacked,
+  reader,
+  heart,
 } from 'ionicons/icons';
 
 @Component({
@@ -18,12 +22,8 @@ import {
 export class AppComponent {
   constructor() {
     addIcons({
-      restaurant,
-      homeOutline,
-      fileTrayStackedOutline,
-      restaurantOutline,
-      readerOutline,
-      heartOutline,
+      restaurant, homeOutline, fileTrayStackedOutline, restaurantOutline, readerOutline, heartOutline,
+      home, fileTrayStacked, reader, heart,
     });
   }
 }

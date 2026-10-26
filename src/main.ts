@@ -14,7 +14,7 @@ import { AppComponent } from './app/app.component';
 bootstrapApplication(AppComponent, {
   providers: [
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
-    provideIonicAngular(),
-    provideRouter(routes, withPreloading(PreloadAllModules), withComponentInputBinding()), // ← añadido
+    provideIonicAngular({ mode: 'ios', backButtonText: '' }),
+    provideRouter(routes, withPreloading(PreloadAllModules), withComponentInputBinding()),
   ],
 });

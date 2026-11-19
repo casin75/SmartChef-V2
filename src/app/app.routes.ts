@@ -1,11 +1,23 @@
 import { Routes } from '@angular/router';
 
 export const routes: Routes = [
+  { path: '', redirectTo: 'entrada', pathMatch: 'full' },
+
+  // ── Fuera del menú ──
   {
-    path: '',
-    redirectTo: 'app',
-    pathMatch: 'full',
+    path: 'entrada',
+    loadComponent: () => import('./paginas/entrada/entrada.page').then((m) => m.EntradaPage),
   },
+  {
+    path: 'login',
+    loadComponent: () => import('./paginas/login/login.page').then((m) => m.LoginPage),
+  },
+  {
+    path: 'registro',
+    loadComponent: () => import('./paginas/registro/registro.page').then((m) => m.RegistroPage),
+  },
+
+  // ── Dentro del menú ──
   {
     path: 'app',
     loadComponent: () => import('./paginas/tabs/tabs.page').then((m) => m.TabsPage),
@@ -13,6 +25,10 @@ export const routes: Routes = [
       {
         path: 'inicio',
         loadComponent: () => import('./paginas/inicio/inicio.page').then((m) => m.InicioPage),
+      },
+      {
+        path: 'inicio/perfil',
+        loadComponent: () => import('./paginas/perfil/perfil.page').then((m) => m.PerfilPage),
       },
       {
         path: 'mi-cocina',
@@ -32,27 +48,7 @@ export const routes: Routes = [
         loadComponent: () =>
           import('./paginas/favoritos/favoritos.page').then((m) => m.FavoritosPage),
       },
-      {
-        path: '',
-        redirectTo: 'inicio',
-        pathMatch: 'full',
-      },
+      { path: '', redirectTo: 'inicio', pathMatch: 'full' },
     ],
-  },
-  {
-    path: 'entrada',
-    loadComponent: () => import('./paginas/entrada/entrada.page').then((m) => m.EntradaPage),
-  },
-  {
-    path: 'login',
-    loadComponent: () => import('./paginas/login/login.page').then((m) => m.LoginPage),
-  },
-  {
-    path: 'registro',
-    loadComponent: () => import('./paginas/registro/registro.page').then((m) => m.RegistroPage),
-  },
-  {
-    path: 'perfil',
-    loadComponent: () => import('./paginas/perfil/perfil.page').then((m) => m.PerfilPage),
   },
 ];

@@ -1,7 +1,14 @@
 import { Component } from '@angular/core';
 import { IonApp, IonRouterOutlet } from '@ionic/angular';
 import { addIcons } from 'ionicons';
-import { restaurant } from 'ionicons/icons';
+import {
+  restaurant,
+  homeOutline,
+  fileTrayStackedOutline,
+  restaurantOutline,
+  readerOutline,
+  heartOutline,
+} from 'ionicons/icons';
 
 @Component({
   selector: 'app-root',
@@ -10,6 +17,13 @@ import { restaurant } from 'ionicons/icons';
 })
 export class AppComponent {
   constructor() {
-    addIcons({ restaurant }); // registramos el icono para toda la app
+    addIcons({
+      restaurant,
+      homeOutline,
+      fileTrayStackedOutline,
+      restaurantOutline,
+      readerOutline,
+      heartOutline,
+    });
   }
 }

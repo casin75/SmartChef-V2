@@ -27,6 +27,11 @@ export const routes: Routes = [
         loadComponent: () => import('./paginas/inicio/inicio.page').then((m) => m.InicioPage),
       },
       {
+        path: 'inicio/historial',
+        loadComponent: () =>
+          import('./paginas/historial/historial.page').then((m) => m.HistorialPage),
+      },
+      {
         path: 'inicio/perfil',
         loadComponent: () => import('./paginas/perfil/perfil.page').then((m) => m.PerfilPage),
       },
@@ -36,8 +41,18 @@ export const routes: Routes = [
           import('./paginas/mi-cocina/mi-cocina.page').then((m) => m.MiCocinaPage),
       },
       {
+        path: 'mi-cocina/nuevo',
+        loadComponent: () =>
+          import('./paginas/producto-nuevo/producto-nuevo.page').then((m) => m.ProductoNuevoPage),
+      },
+      {
         path: 'recetas',
         loadComponent: () => import('./paginas/recetas/recetas.page').then((m) => m.RecetasPage),
+      },
+      {
+        path: 'recetas/:id',
+        loadComponent: () =>
+          import('./paginas/receta-detalle/receta-detalle.page').then((m) => m.RecetaDetallePage),
       },
       {
         path: 'lista',
@@ -47,6 +62,13 @@ export const routes: Routes = [
         path: 'favoritos',
         loadComponent: () =>
           import('./paginas/favoritos/favoritos.page').then((m) => m.FavoritosPage),
+      },
+      {
+        path: 'favoritos/:id',
+        loadComponent: () =>
+          import('./paginas/coleccion-detalle/coleccion-detalle.page').then(
+            (m) => m.ColeccionDetallePage,
+          ),
       },
       { path: '', redirectTo: 'inicio', pathMatch: 'full' },
     ],

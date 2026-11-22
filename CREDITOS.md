@@ -1,19 +1,19 @@
 # Créditos de las fotos
 
-> **Pendiente:** ahora mismo las fotos de `src/assets/fotos/` son imágenes provisionales generadas
-> (pone «FOTO PENDIENTE»). Sustitúyelas por fotos reales con licencia libre **con el mismo nombre de fichero**,
-> de unos 800 px de ancho y menos de 150 KB (squoosh.app, JPG calidad 75), y rellena autor y licencia.
+Las fotos de las recetas (`src/assets/fotos/`) se descargaron de [Unsplash](https://unsplash.com) y se usan
+con la [Unsplash License](https://unsplash.com/license): uso gratuito, también en proyectos, sin obligación
+de atribución. No se guardó el enlace exacto de cada foto al descargarlas.
 
-| Fichero | Receta | Busca en Unsplash / Pexels / Commons | Autor | Licencia | Fuente |
-|---|---|---|---|---|---|
-| pasta-pesto.jpg | Pasta al pesto con tomates cherry | pesto pasta cherry tomatoes | | | |
-| bowl-frutas.jpg | Bowl de frutas y verduras tropicales | tropical fruit bowl | | | |
-| ensalada-mixta.jpg | Ensalada mixta | mixed salad | | | |
-| tortilla-patatas.jpg | Tortilla de patatas | spanish omelette tortilla | | | |
-| salmon-horno.jpg | Salmón al horno con limón | baked salmon lemon | | | |
-| crema-calabaza.jpg | Crema de calabaza | pumpkin soup | | | |
-| pollo-curry.jpg | Pollo al curry con arroz | chicken curry rice | | | |
-| tostada-aguacate.jpg | Tostada de aguacate y huevo | avocado toast egg | | | |
-| lentejas-verduras.jpg | Lentejas con verduras | lentil stew | | | |
+| Fichero | Receta | Origen | Licencia |
+|---|---|---|---|
+| pasta-pesto.jpg | Pasta al pesto con tomates cherry | Unsplash | Unsplash License |
+| bowl-frutas.jpg | Bowl de frutas y verduras tropicales | Unsplash | Unsplash License |
+| ensalada-mixta.jpg | Ensalada mixta | Unsplash | Unsplash License |
+| tortilla-patatas.jpg | Tortilla de patatas | Unsplash | Unsplash License |
+| salmon-horno.jpg | Salmón al horno con limón | Unsplash | Unsplash License |
+| crema-calabaza.jpg | Crema de calabaza | Unsplash | Unsplash License |
+| pollo-curry.jpg | Pollo al curry con arroz | Unsplash | Unsplash License |
+| tostada-aguacate.jpg | Tostada de aguacate y huevo | Unsplash | Unsplash License |
+| lentejas-verduras.jpg | Lentejas con verduras | Unsplash | Unsplash License |
 
 El logotipo del chef robot de la pantalla de entrada es un SVG propio dibujado a partir del diseño de Figma.

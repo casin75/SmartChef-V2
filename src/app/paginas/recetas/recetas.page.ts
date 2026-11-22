@@ -1,14 +1,16 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 import { IonContent, IonHeader, IonTitle, IonToolbar } from '@ionic/angular';
-import { TarjetaRecetaComponent } from '../../componentes/tarjeta-receta/tarjeta-receta.component';
-import { RECETAS } from '../../datos/recetas';
 
 @Component({
   selector: 'app-recetas',
   templateUrl: './recetas.page.html',
   styleUrls: ['./recetas.page.scss'],
-  imports: [IonContent, IonHeader, IonTitle, IonToolbar, TarjetaRecetaComponent],
+  imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule],
 })
-export class RecetasPage {
-  recetas = RECETAS; // las 9 recetas de ejemplo
+export class RecetasPage implements OnInit {
+  constructor() {}
+
+  ngOnInit() {}
 }

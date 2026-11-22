@@ -13,5 +13,5 @@ import { ChipEtiquetaComponent } from '../chip-etiqueta/chip-etiqueta.component'
 })
 export class TarjetaRecetaComponent {
   receta = input.required<Receta>(); // la receta que tiene que pintar
-  mini = input(false); // versión pequeña para Inicio (por defecto, no)
+  mini = input(false); // versión pequeña para el inicio: solo foto, nombre y tiempo
 }

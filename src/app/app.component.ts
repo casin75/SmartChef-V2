@@ -29,7 +29,7 @@ export class AppComponent {
     addIcons({
       restaurant, homeOutline, fileTrayStackedOutline, restaurantOutline, readerOutline, heartOutline,
       home, fileTrayStacked, reader, heart, moonOutline,
-      calendarOutline,
+      calendarOutline, timeOutline, flameOutline, personOutline,
     });
   }
 }

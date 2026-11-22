@@ -14,6 +14,9 @@ import {
   heart,
   moonOutline,
   calendarOutline,
+  timeOutline,
+  flameOutline,
+  personOutline,
 } from 'ionicons/icons';
 
 @Component({

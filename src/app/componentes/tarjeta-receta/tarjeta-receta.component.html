@@ -1,0 +1,3 @@
+@for (etiqueta of mini() ? receta().etiquetas.slice(0, 1) : receta().etiquetas; track etiqueta) { }
+{{ receta().nombre }}
+{{ receta().tiempo }} min @if (!mini()) { {{ receta().kcal }} kcal {{ receta().raciones }} pers. }

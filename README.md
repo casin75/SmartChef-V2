@@ -46,6 +46,10 @@ Cada pantalla en modo claro y en modo oscuro.
 |---|---|---|---|
 | <img src="docs/capturas/perfil.png" width="180"> <img src="docs/capturas/perfil-oscuro.png" width="180"> | <img src="docs/capturas/notificaciones.png" width="180"> <img src="docs/capturas/notificaciones-oscuro.png" width="180"> | <img src="docs/capturas/escanear-ticket.png" width="180"> <img src="docs/capturas/escanear-ticket-oscuro.png" width="180"> | <img src="docs/capturas/no-encontrada.png" width="180"> <img src="docs/capturas/no-encontrada-oscuro.png" width="180"> |
 
+| Nueva colección | Guardar en una colección |
+|---|---|
+| <img src="docs/capturas/coleccion-nueva.png" width="180"> <img src="docs/capturas/coleccion-nueva-oscuro.png" width="180"> | <img src="docs/capturas/guardar-coleccion.png" width="180"> <img src="docs/capturas/guardar-coleccion-oscuro.png" width="180"> |
+
 ## Identidad visual
 
 ![Paleta de SmartChef](docs/paleta.png)
@@ -89,6 +93,7 @@ verdes en la lista de la compra.
 │   ├── recetas/:id       Ficha de receta
 │   ├── lista             Lista de la compra
 │   ├── favoritos         Favoritos
+│   ├── favoritos/nueva   Nueva colección (formulario)
 │   ├── favoritos/receta/:id  Ficha de receta (abierta desde Favoritos)
 │   └── favoritos/:id     Colección
 ├── escanear-ticket       Pantalla completa, sin menú
@@ -118,6 +123,7 @@ AppComponent
 │   ├── RecetaDetallePage ─ app-chip-etiqueta, app-chip-dificultad, app-estado-vacio
 │   ├── ListaPage ───────── app-cabecera, app-estado-vacio
 │   ├── FavoritosPage ───── app-cabecera, app-fila-imagen, app-estado-vacio
+│   ├── ColeccionNuevaPage ─ app-cabecera
 │   └── ColeccionDetallePage ─ app-cabecera, app-tarjeta-receta, app-estado-vacio
 ├── EscanearTicketPage ──── app-fila-producto
 ├── NotificacionesPage ──── app-cabecera, app-estado-vacio
@@ -165,7 +171,7 @@ cantidad, la categoría y el marcado de la lista de la compra.
 | `@for`, `@if`, `@switch` | En casi todas las páginas; `@switch` en chips, notificaciones, ficha y escáner |
 | Lista, tarjeta, chip, segmento, buscador | Lista de la compra, tarjetas de receta, filtros, Mi Cocina y ficha, Recetas |
 | Formulario con 4 tipos de campo | Añadir producto: texto, número, selector, fecha e interruptor |
-| Modal y botón flotante | Lista de la compra (botón + abre «Nuevo producto»); calendarios |
+| Modal y botón flotante | Lista de la compra (botón + abre «Nuevo producto»); ficha de receta (guardar en una colección); calendarios |
 | Tema propio y modo oscuro | `theme/variables.scss`, interruptor en Perfil |
 | Estados vacíos | Recetas, Mi Cocina, Lista, Favoritos, Colección, Historial, Notificaciones |
-| Fotos con licencia y créditos | **Pendiente:** ver `CREDITOS.md` |
+| Fotos con licencia y créditos | `src/assets/fotos`, ver `CREDITOS.md` |

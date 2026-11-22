@@ -7,5 +7,5 @@ import { Dificultad } from '../../modelos/receta';
   styleUrls: ['./chip-dificultad.component.scss'],
 })
 export class ChipDificultadComponent {
-  dificultad = input.required<Dificultad>(); // 1, 2 o 3: obligatorio pasarlo
+  dificultad = input.required<Dificultad>();
 }

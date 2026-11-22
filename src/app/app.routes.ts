@@ -72,6 +72,11 @@ export const routes: Routes = [
           import('./paginas/favoritos/favoritos.page').then((m) => m.FavoritosPage),
       },
       {
+        path: 'favoritos/nueva',
+        loadComponent: () =>
+          import('./paginas/coleccion-nueva/coleccion-nueva.page').then((m) => m.ColeccionNuevaPage),
+      },
+      {
         path: 'favoritos/receta/:id',
         data: { volver: '/app/favoritos' },
         loadComponent: () =>

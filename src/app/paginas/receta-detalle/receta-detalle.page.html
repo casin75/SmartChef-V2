@@ -5,10 +5,15 @@
       <img [src]="receta.fotos[0].url" [alt]="receta.nombre" />
       <div class="botones-flotantes">
         <ion-back-button [defaultHref]="volver()" text="" aria-label="Atrás"></ion-back-button>
-        <button class="redondo" (click)="favorita = !favorita"
-                [attr.aria-label]="favorita ? 'Quitar de favoritos' : 'Guardar en favoritos'">
-          <ion-icon [name]="favorita ? 'heart' : 'heart-outline'"></ion-icon>
-        </button>
+        <div class="derecha">
+          <button class="redondo guardar" (click)="verColecciones = true" aria-label="Añadir a una colección">
+            <ion-icon [name]="estaEnAlguna() ? 'bookmark' : 'bookmark-outline'"></ion-icon>
+          </button>
+          <button class="redondo" (click)="favorita = !favorita"
+                  [attr.aria-label]="favorita ? 'Quitar de favoritos' : 'Guardar en favoritos'">
+            <ion-icon [name]="favorita ? 'heart' : 'heart-outline'"></ion-icon>
+          </button>
+        </div>
       </div>
     </div>
 
@@ -72,6 +77,22 @@
         }
       }
     </div>
+    <!-- Ventana desde abajo para elegir en qué colecciones va la receta -->
+    <ion-modal [isOpen]="verColecciones" (didDismiss)="alCerrar()"
+               [initialBreakpoint]="0.55" [breakpoints]="[0, 0.55, 0.9]" class="ventana-colecciones">
+      <ng-template>
+        <div class="colecciones">
+          <h2>Guardar en una colección</h2>
+          @for (c of colecciones; track c.id) {
+            <ion-checkbox labelPlacement="end" justify="start" [checked]="c.recetas.includes(receta.id)"
+                          (ionChange)="alternar(c, receta.id)">
+              {{ c.icono }} {{ c.nombre }} <small>· {{ c.recetas.length }}</small>
+            </ion-checkbox>
+          }
+          <ion-button fill="clear" expand="block" (click)="nuevaColeccion()">+ Nueva colección</ion-button>
+        </div>
+      </ng-template>
+    </ion-modal>
   </ion-content>
 
   <ion-footer class="pie-formulario">

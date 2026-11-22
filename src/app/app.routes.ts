@@ -31,6 +31,13 @@ export const routes: Routes = [
         loadComponent: () =>
           import('./paginas/historial/historial.page').then((m) => m.HistorialPage),
       },
+      // La misma ficha de receta dentro de cada pestaña: así el botón atrás vuelve a donde estabas
+      {
+        path: 'inicio/receta/:id',
+        data: { volver: '/app/inicio' },
+        loadComponent: () =>
+          import('./paginas/receta-detalle/receta-detalle.page').then((m) => m.RecetaDetallePage),
+      },
       {
         path: 'inicio/perfil',
         loadComponent: () => import('./paginas/perfil/perfil.page').then((m) => m.PerfilPage),
@@ -51,6 +58,7 @@ export const routes: Routes = [
       },
       {
         path: 'recetas/:id',
+        data: { volver: '/app/recetas' },
         loadComponent: () =>
           import('./paginas/receta-detalle/receta-detalle.page').then((m) => m.RecetaDetallePage),
       },
@@ -62,6 +70,12 @@ export const routes: Routes = [
         path: 'favoritos',
         loadComponent: () =>
           import('./paginas/favoritos/favoritos.page').then((m) => m.FavoritosPage),
+      },
+      {
+        path: 'favoritos/receta/:id',
+        data: { volver: '/app/favoritos' },
+        loadComponent: () =>
+          import('./paginas/receta-detalle/receta-detalle.page').then((m) => m.RecetaDetallePage),
       },
       {
         path: 'favoritos/:id',

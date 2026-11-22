@@ -11,10 +11,12 @@
 .nueva {
   padding: 14px;
   border-radius: 12px;
-  border: 1.5px dashed var(--app-borde);
+  border: 1.5px dashed rgba(var(--ion-color-primary-rgb), .45);
   background: transparent;
-  color: var(--ion-color-medium);
+  color: var(--ion-color-primary);
   font: 600 13px var(--ion-font-family);
+  text-align: center;
+  text-decoration: none;
 }
 
 .datos {

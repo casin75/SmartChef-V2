@@ -1,0 +1,43 @@
+<ion-content [fullscreen]="true">
+  <app-cabecera titulo="Nueva colección" subtitulo="Agrupa tus recetas favoritas" atras="/app/favoritos" />
+
+  <form class="formulario" (submit)="crear()">
+    <label class="campo">
+      <span>Nombre de la colección</span>
+      <ion-input aria-label="Nombre de la colección" placeholder="Ej: Cenas ligeras" [maxlength]="40"
+                 [value]="nombre()" (ionInput)="nombre.set($any($event).detail.value ?? '')"></ion-input>
+    </label>
+
+    <!-- Icono: botones que funcionan como una opción única -->
+    <div class="campo">
+      <span>Icono</span>
+      <div class="iconos" role="radiogroup" aria-label="Icono">
+        @for (i of iconos; track i) {
+          <button type="button" role="radio" [attr.aria-checked]="icono() === i"
+                  [class.elegido]="icono() === i" (click)="icono.set(i)">{{ i }}</button>
+        }
+      </div>
+    </div>
+
+    <div class="campo">
+      <span>Recetas ({{ elegidas().length }} elegidas)</span>
+      <div class="recetas">
+        @for (r of recetas; track r.id) {
+          <ion-checkbox labelPlacement="end" justify="start" [checked]="elegidas().includes(r.id)"
+                        (ionChange)="marcar(r.id, $event.detail.checked)">
+            <span class="receta">
+              <img [src]="r.fotos[0].url" alt="" />
+              {{ r.nombre }}
+            </span>
+          </ion-checkbox>
+        }
+      </div>
+    </div>
+  </form>
+</ion-content>
+
+<ion-footer class="pie-formulario">
+  <ion-button expand="block" [disabled]="!sePuedeCrear()" (click)="crear()">
+    Crear colección {{ icono() }}
+  </ion-button>
+</ion-footer>

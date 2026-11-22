@@ -47,6 +47,40 @@ ion-back-button, .redondo {
   font-size: 20px;
 }
 
+/* Corazón y guardar juntos a la derecha; el de guardar en verde */
+.derecha {
+  display: flex;
+  gap: 10px;
+}
+
+.redondo.guardar {
+  color: var(--ion-color-primary);
+}
+
+/* Ventana de colecciones */
+.colecciones {
+  padding: 22px 20px;
+
+  h2 {
+    margin: 0 0 12px;
+    font-family: var(--app-fuente-titulos);
+    font-size: 22px;
+  }
+
+  ion-checkbox {
+    width: 100%;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--app-borde);
+    font-weight: 600;
+    --checkbox-background-checked: var(--ion-color-tertiary);
+    --border-color-checked: var(--ion-color-tertiary);
+
+    small { font-weight: 400; color: var(--ion-color-medium); }
+  }
+
+  ion-button { margin-top: 10px; }
+}
+
 /* ── La hoja ───────────────────────────── */
 .hoja {
   position: relative;

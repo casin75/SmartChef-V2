@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
 import { IonContent, IonIcon } from '@ionic/angular';
 import { COLECCIONES, FAVORITAS_RECIENTES } from '../../datos/colecciones';
 import { RECETAS } from '../../datos/recetas';
@@ -11,7 +12,7 @@ import { EstadoVacioComponent } from '../../componentes/estado-vacio/estado-vaci
   selector: 'app-favoritos',
   templateUrl: './favoritos.page.html',
   styleUrls: ['./favoritos.page.scss'],
-  imports: [IonContent, IonIcon, CabeceraComponent, FilaImagenComponent, EstadoVacioComponent],
+  imports: [RouterLink, IonContent, IonIcon, CabeceraComponent, FilaImagenComponent, EstadoVacioComponent],
 })
 export class FavoritosPage {
   colecciones = COLECCIONES;

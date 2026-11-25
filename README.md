@@ -4,9 +4,9 @@
 nevera y la despensa, te avisa antes de que algo caduque, te propone recetas con lo que ya tienes, prepara
 tu lista de la compra y lleva un historial de lo que cocinas cada semana.
 
-Proyecto integrado de 2º DAM (Desarrollo de Interfaces + Acceso a Datos). Este repositorio contiene la
-interfaz (Entrega 1): todas las pantallas con datos de maqueta, sin conectar todavía con la API de Spring Boot
-del backend.
+Proyecto integrado de 2º DAM (Desarrollo de Interfaces + Acceso a Datos). Este repositorio contiene las dos
+partes: la interfaz en la raíz (Entrega 1, todas las pantallas con datos de maqueta) y el backend de Spring Boot
+en la carpeta [`backend/`](backend/README.md).
 
 **Tecnologías:** Angular 22 · Ionic 9 · Capacitor 8 · componentes standalone.
 

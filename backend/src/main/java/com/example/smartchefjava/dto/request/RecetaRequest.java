@@ -1,6 +1,5 @@
 package com.example.smartchefjava.dto.request;
 
-import com.example.smartchefjava.validacion.SinIngredientesRepetidos;
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.*;
@@ -41,7 +40,6 @@ public record RecetaRequest(
   List<@NotBlank(message = "Un paso no puede estar vacío") String> pasos,
 
   @Schema(description = "Ingredientes con su cantidad")
-  @SinIngredientesRepetidos
   List<@Valid IngredienteRecetaRequest> ingredientes,
 
   @Schema(description = "Direcciones de las fotos")

@@ -22,6 +22,8 @@ public interface RecetaRepository extends JpaRepository<Receta, Integer> {
     List<Receta> findByDificultadAndTiempoBetween(Integer dificultad, Integer min, Integer max);
 
     boolean existsByNombreIgnoreCase(String nombre);
+    // Al editar: ¿hay OTRA receta con ese nombre?
+    boolean existsByNombreIgnoreCaseAndIdNot(String nombre, Integer id);
 
     long countByDificultad(Integer dificultad);
 

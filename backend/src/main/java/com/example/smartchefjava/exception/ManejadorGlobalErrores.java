@@ -2,6 +2,7 @@ package com.example.smartchefjava.exception;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.dao.DataIntegrityViolationException;
+import org.springframework.data.core.PropertyReferenceException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ProblemDetail;
 import org.springframework.http.converter.HttpMessageNotReadableException;
@@ -9,6 +10,7 @@ import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.method.annotation.MethodArgumentTypeMismatchException;
+import org.springframework.web.servlet.resource.NoResourceFoundException;
 
 import java.time.LocalDateTime;
 import java.util.LinkedHashMap;
@@ -64,6 +66,20 @@ public class ManejadorGlobalErrores {
   public ProblemDetail tipoIncorrecto(MethodArgumentTypeMismatchException e) {
     return construir(HttpStatus.BAD_REQUEST, "Parámetro no válido",
       "El valor de '" + e.getName() + "' no tiene el tipo esperado");
+  }
+
+  // Una ruta que no existe (/api/v1/nada)
+  @ExceptionHandler(NoResourceFoundException.class)
+  public ProblemDetail rutaNoExiste(NoResourceFoundException e) {
+    return construir(HttpStatus.NOT_FOUND, "Ruta no encontrada",
+      "No existe la ruta /" + e.getResourcePath());
+  }
+
+  // Ordenar por un campo que no existe (?sort=precio)
+  @ExceptionHandler(PropertyReferenceException.class)
+  public ProblemDetail campoNoExiste(PropertyReferenceException e) {
+    return construir(HttpStatus.BAD_REQUEST, "Parámetro no válido",
+      "No se puede ordenar por '" + e.getPropertyName() + "'");
   }
 
   // Una restricción de la base de datos que se nos ha escapado

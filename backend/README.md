@@ -30,9 +30,47 @@ export SCHEMA=smartchef
 ./mvnw test                 # ejecutar los tests
 ```
 
+## Entrega 2: servicios y API REST de recetas
+
+Encima de la capa de datos he montado la API del recurso **recetas**, por capas:
+
+- **DTOs** (`dto/request` y `dto/response`) como `record`, con validación (`@NotBlank`, `@Positive`, `@Size`...). El cliente nunca ve las entidades.
+- **Mapper** con MapStruct (`RecetaMapper`) para pasar de entidad a DTO y al revés.
+- **Servicio** con interfaz e implementación (`RecetaService` y `RecetaServiceImpl`), `@Transactional(readOnly = true)` en la clase y `@Transactional` en los métodos que escriben. Aquí están las reglas de negocio, comprobadas con `if`.
+- **Controlador** `RecetaController` en `/api/v1/recetas`, documentado con Swagger.
+- **Errores** con excepciones propias y un `@RestControllerAdvice` que devuelve siempre el mismo formato (`ProblemDetail`).
+
+### Endpoints
+
+| Método | Ruta | Qué hace | Respuesta |
+|--------|------|----------|-----------|
+| GET | `/api/v1/recetas?nombre=&page=&size=&sort=` | Lista paginada, filtrando por nombre | 200 |
+| GET | `/api/v1/recetas/{id}` | Ficha completa con pasos, ingredientes y fotos | 200 / 404 |
+| POST | `/api/v1/recetas` | Crea una receta | 201 + `Location` |
+| PUT | `/api/v1/recetas/{id}` | Edita una receta | 200 / 404 |
+| DELETE | `/api/v1/recetas/{id}` | Borra una receta | 204 / 404 / 409 |
+
+### Reglas de negocio
+
+| Regla | Error |
+|-------|-------|
+| No puede haber dos recetas con el mismo nombre | 409 |
+| No se puede borrar una receta que ya está en el historial de alguien | 409 |
+| Una receta no puede llevar el mismo ingrediente dos veces | 422 |
+| El ingrediente tiene que existir | 404 |
+| Campos obligatorios y rangos (tiempo > 0, raciones de 1 a 20, dificultad de 1 a 3) | 400 |
+
+### Probarla
+
+Con la app arrancada:
+
+- **Postman:** importa la colección [`docs/SmartChef.postman_collection.json`](docs/SmartChef.postman_collection.json). Tiene las peticiones correctas y los casos de error. Los datos de prueba se crean con estas mismas peticiones.
+- **Swagger:** la documentación de la API está en http://localhost:8080/swagger-ui.html
+
 ## Estado
 
 - [x] Modelo de datos y repositorios JPA
-- [ ] Servicios, DTOs y mappers
-- [ ] API REST documentada con Swagger
+- [x] Servicios, DTOs y mappers
+- [x] API REST de recetas documentada con Swagger
+- [ ] Resto de recursos (ver [`docs/plan-requisitos.md`](docs/plan-requisitos.md))
 - [ ] Conexión de la app con el backend
